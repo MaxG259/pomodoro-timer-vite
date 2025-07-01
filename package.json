@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "description": "Pomodoro Timer pet project",
   "scripts": {
-    "start": "echo 'Add a dev server script here (e.g. vite) or use live-server'"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "vite": "^7.0.0"
+  }
 }

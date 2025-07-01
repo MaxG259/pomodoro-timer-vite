@@ -2,6 +2,10 @@
 
 Современный Pomodoro Timer для продуктивности и концентрации.
 
+[![Деплой на Vercel](https://img.shields.io/badge/Live%20Demo-Vercel-black?logo=vercel)](https://pomodoro-timer-vite-three.vercel.app/)
+
+**Деплой:** [https://pomodoro-timer-vite-three.vercel.app/](https://pomodoro-timer-vite-three.vercel.app/)
+
 ## Функционал
 - Таймер Pomodoro: старт, стоп, сброс
 - Выбор задачи из выпадающего меню или ввод своей
@@ -19,10 +23,6 @@
 - `timer.css` — стили для цифр таймера
 - `text-h1.css` — стили для заголовка
 - `script.js` — вся логика таймера и задач
-
-## Запуск
-1. Клонируйте репозиторий
-2. Откройте `index.html` в браузере (или используйте Live Server)
 
 ## Особенности
 - Выпадающее меню с задачами с анимацией и блюром

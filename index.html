@@ -1,13 +1,86 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <title>Pomodoro Timer</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="text-h1.css">
+  <link rel="stylesheet" href="timer.css">
+  <link rel="stylesheet" href="buttons.css">
+  <link rel="stylesheet" href="task-list.css">
+  <link rel="stylesheet" href="mobile.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> <!-- Подключение Roboto -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Pomodoro Timer — современный таймер для продуктивности и концентрации.">
+  <link rel="icon" type="image/svg+xml" href="tomato.svg">
+  <meta name="theme-color" content="#872008">
+</head>
+<body>
+  <div class="body" aria-label="Основной контейнер Pomodoro Timer">
+
+    <div class="sign-wrap-4">
+      <h1 class="sign_word">ТА<span>ЙМ</span>ЕР<span> ТВОЕЙ</span> КОНЦЕН<span>ТРАЦИИ</span></h1>
+    </div>
+
+    <div id="timer">25:00</div>
+    <div class="container">
+      <div class="wrap">
+
+        <button class="button" id="startBtn" type="button" aria-label="Старт/Стоп таймера">
+            <div class="button-text-container">
+                <span class="button-text animate-in">ЧЕГО ЖДЁШЬ?</span>
+            </div>
+        </button>
+        <button class="button" id="resetBtn" type="button" disabled aria-label="Сбросить таймер">
+            <div class="button-text-container">
+                <span class="button-text">ПОВТОРИМ БРАТИШЬ?</span>
+            </div>
+        </button>
+
+      </div>
+
+      <div class="task-section">
+
+        <label class="task-head" for="task-menu">Я ЩА НА ЖЕСТКОМ НАЧИНАЮ:</label>
+        <div class="menu-container" id="task-menu">
+
+            <button class="menu-trigger" aria-haspopup="listbox" aria-expanded="false">Выбери задачу</button>
+
+            <ul class="menu-list" role="listbox">
+              <li class="menu-item">
+                <a href="#">БЕГ</a>
+              </li>
+              <li class="menu-item">
+                <a href="#">ГОТОВЛЮ</a>
+              </li>
+              <li class="menu-item">
+                <a href="#">РЕЖИМ НЕВИДИМКА</a>
+              </li>
+              <li class="menu-item">
+                <a href="#">ИГРАЮ В ДОТУ</a>
+              </li>
+              <li class="menu-item">
+                <a href="#">ЛУЧШЕ ВАМ НЕ ЗНАТЬ (ВВЕДИ СПРАВА)</a>
+              </li>
+            </ul>
+        </div>
+        <input class="custom-task-input" type="text" id="custom-task" placeholder="ПИШИ ЧД ТУТ" disabled aria-label="Ввести свою задачу">
+      </div>
+
+    </div>
+
+    <!-- Кастомное модальное окно -->
+    <div id="custom-alert" class="custom-alert" style="display: none;">
+      <div class="alert-content">
+          <span class="alert-text">ВЫБЕРИ ЗАДАЧУ, НЕ БЕЗДЕЛЬНИЧАЙ!</span>
+          <button class="alert-close">ТИШ ТИШ, ОК</button>
+      </div>
+    </div>
+
+    <!-- Аудиоэлемент для сигнала -->
+    <audio id="timerSound" src="sounds/alarm.mp3" preload="auto"></audio>
+
+  </div>
+  <script src="script.js"></script>
+</body>
 </html>

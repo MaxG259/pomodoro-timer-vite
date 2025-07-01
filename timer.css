@@ -1,0 +1,49 @@
+#timer {
+  font-size: 16vw;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3125rem;
+  color: #FFF;
+  font-family: 'Roboto', sans-serif;
+  text-shadow: 0 0 0.2rem #eaeaea, 0 0 0.5rem #655e5d;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+#timer span {
+  display: inline-block;
+  position: relative;
+  transition: transform 0.9s ease, opacity 0.9s ease;
+  animation: neon-4 linear infinite 2s;
+}
+
+#timer.animate span {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+#timer span.new {
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+#timer.animate span.new {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+@keyframes neon-4 {
+  78% { color: inherit; text-shadow: inherit; }
+  79% { color: rgb(209, 182, 176); }
+  80% { text-shadow: none; }
+  81% { color: inherit; text-shadow: inherit; }
+  82% { color: rgb(220, 142, 142); text-shadow: none; }
+  83% { color: inherit; text-shadow: inherit; }
+  92% { color: rgb(201, 131, 115); text-shadow: none; }
+  92.5% { color: inherit; text-shadow: inherit; }
+}

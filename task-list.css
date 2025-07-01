@@ -1,0 +1,149 @@
+.menu-container {
+    width: 100%;
+    max-width: 350px;
+    box-sizing: border-box;
+    position: relative;
+    display: inline-block;
+    flex-grow: 0;
+}
+
+.menu-trigger {
+    width: 100%;
+    padding: 1.2rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: linear-gradient(to right, rgba(135, 32, 8, 0.3) 0%, rgba(236, 140, 105, 0.3) 100%);
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-align: left;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.menu-trigger:hover,
+.menu-trigger:focus {
+    opacity: 1;
+}
+
+.menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: auto;
+    bottom: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(30,30,30,0.85);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-radius: 25px 25px 25px 25px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+    transition: opacity 0.35s cubic-bezier(0.4,0,0.2,1), transform 0.35s cubic-bezier(0.4,0,0.2,1), visibility 0.35s;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.menu-container:hover .menu-list,
+.menu-container:focus-within .menu-list {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+}
+
+.menu-item {
+    position: relative;
+}
+
+.menu-item > a {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #fff; /* Убедимся, что текст белый и виден */
+    text-decoration: none;
+    transition: background 0.3s ease, border-radius 0s;
+    border-radius: 25px; /* Сохраняем закругление */
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.5); /* Лёгкая тень для контраста */
+}
+
+.menu-item > a:hover,
+.menu-item > a:focus {
+    background: rgba(0, 0, 0, 0.3); /* Лёгкий фон при наведении */
+    border-radius: 25px; /* Сохраняем закругление */
+}
+
+.menu-item > a.active {
+    background: rgba(255,255,255,0.15);
+    color: #ffeb3b;
+    font-weight: bold;
+    border: 2px solid #ffeb3b;
+}
+
+.task-section {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 1rem;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, rgba(135, 32, 8, 0.3), rgba(135, 32, 8, 0.15));
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 3.125rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 0.25rem 0.9375rem rgba(135, 32, 8, 0.3), 0 0 0.625rem rgba(255, 255, 255, 0.2) inset;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.task-section:hover {
+    background: linear-gradient(90deg, rgba(135, 32, 8, 0.4), rgba(135, 32, 8, 0.25));
+    box-shadow: 0 0.375rem 1.25rem rgba(135, 32, 8, 0.4), 0 0 0.9375rem rgba(255, 255, 255, 0.3) inset;
+}
+
+.task-head {
+    padding-left: 55px;
+    text-align: left;
+    color: #fff;
+    text-shadow: 0 0 0.3125rem #fff;
+    animation: neon-flash 1.5s infinite steps(2);
+    flex-grow: 0;
+}
+
+.custom-task-input {
+    max-width: 250px;
+    padding: 0.625rem 0.9375rem;
+    font-size: 1.125rem;
+    border-radius: 1.5625rem;
+    border: none;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    outline: none;
+    box-shadow: 0 0 0.3125rem rgba(255, 255, 255, 0.2), 0 0 0.625rem rgba(0, 255, 255, 0.3), inset 0 0 0.3125rem rgba(255, 255, 255, 0.2);
+    animation: neon-flash 3s infinite;
+    box-sizing: border-box;
+    flex-grow: 0;
+}
+
+.custom-task-input:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+@keyframes neon-flash {
+    0%, 19%, 21%, 59%, 61%, 100% { text-shadow: 0 0 5px #fff; }
+    20%, 60% { text-shadow: 0 0 20px #ff00ff, 0 0 30px #00ffff; }
+}
+
+.button:focus-visible, .menu-trigger:focus-visible, .custom-task-input:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+  box-shadow: 0 0 0.5rem #fff;
+}

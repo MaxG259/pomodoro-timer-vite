@@ -1,14 +1,9 @@
 {
-  "name": "pomodoro-timer-vite",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "name": "pomodoro-timer",
+  "version": "1.0.0",
+  "description": "Pomodoro Timer pet project",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "start": "echo 'Add a dev server script here (e.g. vite) or use live-server'"
   },
-  "devDependencies": {
-    "vite": "^7.0.0"
-  }
+  "devDependencies": {}
 }

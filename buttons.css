@@ -1,0 +1,136 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.wrap {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+}
+
+.button {
+  min-width: 10rem;
+  max-width: 100%;
+  width: auto;
+  padding: 1.2rem 2.2rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+  background: linear-gradient(90deg, rgb(135, 32, 8));
+  border: none;
+  border-radius: 3.125rem;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 1.25rem rgb(135, 32, 8), 0 0 2.5rem rgba(255, 255, 255, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgb(135, 32, 8), 0 0 60px rgba(194, 194, 200, 0.7);
+}
+
+.button:active {
+  transform: scale(0.95);
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: 0.5s;
+}
+
+.button:hover::before {
+  left: 100%;
+}
+
+#resetBtn {
+  background: linear-gradient(90deg, rgb(100, 20, 5));
+  box-shadow: 0 0 20px rgb(100, 20, 5), 0 0 40px rgba(255, 255, 255, 0.5);
+}
+
+#resetBtn:hover {
+  box-shadow: 0 0 30px rgb(100, 20, 5), 0 0 60px rgba(194, 194, 200, 0.7);
+}
+
+/* Стили для неактивной кнопки сброса таймера */
+.button:disabled {
+  background: linear-gradient(90deg, rgb(80, 80, 80));
+  box-shadow: none;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.button:disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.button:disabled::before {
+  display: none;
+}
+
+/* Стили для списка задач */
+/* УДАЛЕНО: .task-section, .task-head, .custom-task-input, @keyframes neon-flash (переносим в task-list.css) */
+
+/* Стили для кастомного модального окна */
+.custom-alert {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.alert-content {
+  background: linear-gradient(90deg, rgba(135, 32, 8, 0.5), rgba(135, 32, 8, 0.3));
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  padding: 20px 40px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(135, 32, 8, 0.3);
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+.alert-text {
+  display: block;
+  margin-bottom: 15px;
+  animation: neon-flash 1.5s infinite steps(2); /* Добавили анимацию */
+}
+
+.alert-close {
+  padding: 10px 20px;
+  font-size: 16px;
+  background: linear-gradient(90deg, rgb(100, 20, 5));
+  border: none;
+  border-radius: 25px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.alert-close:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}

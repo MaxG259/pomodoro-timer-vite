@@ -1,0 +1,74 @@
+@media (max-width: 600px) {
+  body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-size: 80vw auto !important;
+    background-position: top center !important;
+  }
+  .body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.2rem;
+    box-sizing: border-box;
+  }
+  .sign-wrap-4 .sign_word {
+    padding-top: 5.1rem;
+    font-size: 2.1rem;
+    line-height: 1.1;
+    font-weight: bold;
+    word-break: break-word;
+    text-align: center;
+  }
+  #timer {
+    font-size: 32vw;
+    margin: 0.7rem 0 1.2rem 0;
+    font-weight: bold;
+  }
+  .container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    align-items: center;
+  }
+  .wrap {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    align-items: center;
+  }
+  .button {
+    width: 90%;
+    max-width: 320px;
+    margin: 0 auto;
+    font-size: 1rem;
+    padding: 0.6rem 18px;
+    box-sizing: border-box;
+  }
+  .task-section {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.7rem 12px;
+    font-size: 0.95rem;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  .menu-container,
+  .custom-task-input {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .task-head {
+    text-align: center;
+    width: 100%;
+    padding-left: 0;
+  }
+}
